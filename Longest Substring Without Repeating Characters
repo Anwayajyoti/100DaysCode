@@ -1,0 +1,31 @@
+Input: s = "pwwkew"
+Output: 3
+
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+ALGORITM:-
+
+- Take left pointer (left) = 0 , right pointer(right) ,a LENGTH VARIABLE = 0  and a SET
+- for right in range(len(s)):
+- if s[right]  in set, then set.remove(s[left]) and left+=1
+- else  set.add(s[right]) 
+- length=max(length,right-left+1)
+
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+CODE:-
+
+temp=set()
+length=0
+left=0
+for right in range(len(s)):
+    while s[right] in temp:
+        temp.remove(s[left])
+        left+=1
+    temp.add(s[right])
+    length=max(length,right-left+1)
+print(length)
+
