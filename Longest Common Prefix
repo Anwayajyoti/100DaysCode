@@ -1,0 +1,15 @@
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+CODE:-
+strs=sorted(strs)
+res=''
+start=strs[0]
+end=strs[-1]
+for i in range(min(len(start),len(end))):
+       if start[i]!=end[i]:
+                return res
+        else:
+                res+=start[i]
+  return(res)
