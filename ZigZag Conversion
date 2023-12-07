@@ -1,0 +1,22 @@
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        if numRows == 1:
+            return s
+
+        ans = [''] * numRows
+        flag = False
+        i = 0
+
+        for ch in s:
+            ans[i] += ch
+
+            if i == 0 or i == numRows - 1:
+                flag = not flag
+
+            if flag:
+                i += 1
+            else:
+                i -= 1
+
+        result = ''.join(ans)
+        return result
