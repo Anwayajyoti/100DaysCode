@@ -1,0 +1,29 @@
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        line1=list("qwertyuiop")
+        line2=list("asdfghjkl")
+        line3=list("zxcvbnm")
+        res=[]
+        
+        for i in words:
+            flag=0
+            temp=i
+            i=i.lower()
+            if i[0] in line1:
+                line=line1
+            elif i[0] in line2:
+                line=line2
+            else:
+                line=line3
+            for j in range(0,len(i)):
+                if i[j] not in line:
+                    flag=1
+                    break
+            if flag==0:
+                res.append(temp)
+            
+        return res
+                    
+            
+        
+        
